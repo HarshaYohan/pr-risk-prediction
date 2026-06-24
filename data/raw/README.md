@@ -1,7 +1,7 @@
-# Raw Data
+# `data/raw/` — original input
 
-Place original PRismBench files here locally. Do not commit real datasets.
+Place the original **PRismBench** files here locally. **Gitignored** — never commit real datasets.
 
-## Workflow
-
-Use this folder as part of the PR risk prediction workflow. Add files that match the folder purpose, and keep large data, secrets, checkpoints, and generated artifacts out of Git.
+- Stage: source of truth, untouched.
+- Next stage: cleaned outputs go to [`../interim/`](../interim/README.md) (see the [data flow](../README.md#data-flow)).
+- Only this README and `.gitkeep` are tracked.

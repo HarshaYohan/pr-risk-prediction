@@ -1,7 +1,7 @@
-# Sample Data
+# `data/sample/` — committed demo data
 
-Small fake sample files for tests, demos, and onboarding.
+A small **synthetic** sample (`sample_prs.csv`, 10 rows) for tests, demos, and onboarding. **This is the only dataset committed to Git.**
 
-## Workflow
-
-Use this folder as part of the PR risk prediction workflow. Add files that match the folder purpose, and keep large data, secrets, checkpoints, and generated artifacts out of Git.
+- Lets every notebook and test run without the real PRismBench data.
+- Schema is documented in [`data/README.md`](../README.md#sample-schema-samplesample_prscsv).
+- ⚠️ Tiny with singleton classes — use for toolchain validation, not for results.
