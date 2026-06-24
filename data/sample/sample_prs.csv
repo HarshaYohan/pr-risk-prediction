@@ -1,0 +1,11 @@
+pr_id,repository,title,description,files_changed,lines_added,lines_deleted,commits_count,comments_count,reviewers_count,ci_failed,code_diff_summary,is_risky,risk_type
+PR-001,alpha/api,Fix null token validation,Adds a guard for missing auth token in middleware,2,18,4,1,3,2,false,Small validation guard and tests,0,non_risky
+PR-002,alpha/api,Refactor payment retry flow,Changes retry timing and error handling for payment webhook failures,9,420,180,7,21,3,true,Large payment control-flow change with CI failure,1,integration_risk
+PR-003,orchid/mobile,Update README screenshots,Refreshes onboarding screenshots and setup notes,4,32,10,1,1,1,false,Documentation image references and markdown updates,0,documentation_config_risk
+PR-004,nebula/web,Add raw SQL report endpoint,Introduces admin report query using string formatting,5,96,28,2,8,2,false,New SQL endpoint touches admin reporting,1,security_risk
+PR-005,nebula/web,Optimize dashboard aggregation,Caches expensive dashboard summary queries,6,150,70,3,12,2,false,Query aggregation and cache invalidation changes,1,performance_risk
+PR-006,core/build,Migrate CI to new runner,Changes build matrix and deployment environment variables,7,210,130,5,18,4,true,CI workflow and deployment configuration updates,1,build_ci_risk
+PR-007,atlas/service,Simplify user mapper,Renames local variables and extracts small helper method,3,35,22,1,2,1,false,Internal mapper cleanup without behavior changes,0,non_risky
+PR-008,atlas/service,Remove flaky integration tests,Deletes failing integration tests during service migration,3,12,260,2,14,2,false,Test coverage removed while migration is incomplete,1,test_risk
+PR-009,delta/core,Rewrite permission resolver,Replaces nested permission checks with new resolver abstraction,14,680,390,9,33,5,true,Large authorization rewrite across modules,1,bug_risk
+PR-010,delta/core,Format config examples,Normalizes YAML examples and comments,5,44,39,1,0,1,false,Configuration examples and comments only,2,unsure

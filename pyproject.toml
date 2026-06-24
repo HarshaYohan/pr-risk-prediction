@@ -1,0 +1,25 @@
+[project]
+name = "pr-risk-active-learning"
+version = "0.1.0"
+description = "Explainable Pull Request risk prediction using active learning."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "<YOUR_TEAM_NAME>" }]
+license = { text = "MIT" }
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

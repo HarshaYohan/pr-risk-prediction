@@ -1,0 +1,7 @@
+experiment_id: exp-001
+dataset_version: sample
+task_type: binary_risk_prediction
+target: is_risky
+model_config: configs/baseline_logistic_regression.yaml
+active_learning_config: configs/active_learning.yaml
+notes: Starter experiment configuration.

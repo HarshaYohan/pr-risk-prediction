@@ -1,0 +1,9 @@
+model_name: codebert
+task_type: risk_type_classification
+target: risk_type
+base_model: microsoft/codebert-base
+params:
+  max_length: 256
+  batch_size: 8
+  epochs: 3
+  learning_rate: 0.00002

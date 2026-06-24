@@ -1,0 +1,9 @@
+model_name: xgboost
+task_type: risk_type_classification
+target: risk_type
+params:
+  n_estimators: 300
+  learning_rate: 0.05
+  max_depth: 5
+  subsample: 0.8
+  random_state: 42

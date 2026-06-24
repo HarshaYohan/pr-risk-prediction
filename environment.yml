@@ -1,0 +1,37 @@
+name: pr-risk-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - tqdm
+  - joblib
+  - pytest
+  - jupyter
+  - ipykernel
+  - pip:
+      - xgboost
+      - lightgbm
+      - plotly
+      - black
+      - ruff
+      - streamlit
+      - fastapi
+      - uvicorn
+      - mlflow
+      - shap
+      - lime
+      - torch
+      - transformers
+      - datasets
+      - accelerate
+      - evaluate
+      - sentence-transformers

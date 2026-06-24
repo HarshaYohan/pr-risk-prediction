@@ -1,0 +1,48 @@
+# Core data science
+pandas
+numpy
+scipy
+scikit-learn
+
+# Gradient boosting and tree models
+xgboost
+lightgbm
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Configuration and utilities
+pyyaml
+tqdm
+joblib
+
+# Testing and code quality
+pytest
+black
+ruff
+
+# Notebooks
+jupyter
+ipykernel
+
+# Prototype applications
+streamlit
+fastapi
+uvicorn
+
+# Experiment tracking
+mlflow
+
+# Explainable AI
+shap
+lime
+
+# Deep learning and transformers
+torch
+transformers
+datasets
+accelerate
+evaluate
+sentence-transformers

@@ -1,0 +1,10 @@
+initial_seed_size: 200
+batch_size: 100
+rounds: 10
+strategies:
+  - random
+  - least_confidence
+  - entropy
+  - margin
+  - diversity
+random_state: 42
