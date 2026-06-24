@@ -1,7 +1,6 @@
-# Interim Data
+# `data/interim/` — cleaned intermediate
 
-Intermediate cleaned files created during preprocessing. Usually generated and ignored.
+Intermediate cleaned tables created during preprocessing (notebook 02 via `pr_risk.data.preprocess`). **Generated and gitignored.**
 
-## Workflow
-
-Use this folder as part of the PR risk prediction workflow. Add files that match the folder purpose, and keep large data, secrets, checkpoints, and generated artifacts out of Git.
+- Previous stage: [`../raw/`](../raw/README.md) · Next stage: [`../processed/`](../processed/README.md).
+- Safe to delete and regenerate from `raw/` + code.

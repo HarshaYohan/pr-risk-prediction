@@ -1,7 +1,6 @@
-# Unlabelled Data
+# `data/unlabelled/` — pool awaiting labels
 
-Unlabelled candidate PR pools for active learning.
+Candidate PR pool the active-learning loop scores and queries from. **Gitignored.**
 
-## Workflow
-
-Use this folder as part of the PR risk prediction workflow. Add files that match the folder purpose, and keep large data, secrets, checkpoints, and generated artifacts out of Git.
+- The query strategy selects batches → [`annotation/annotation_batches/`](../../annotation/README.md#labelling-workflow).
+- Labelled rows move to [`../labelled/`](../labelled/README.md).

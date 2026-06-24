@@ -1,7 +1,18 @@
 # Reports
 
-Figures, tables, comparisons, and final result artifacts.
+Final, curated artifacts for the dissertation and presentations. Commit **small, final** assets only — avoid large or temporary exports.
 
-## Workflow
+## Subfolders
 
-Use this folder as part of the PR risk prediction workflow. Add files that match the folder purpose, and keep large data, secrets, checkpoints, and generated artifacts out of Git.
+| Folder | Holds | Produced by |
+|---|---|---|
+| [figures/](figures/README.md) | Plots (confusion matrices, AL learning curves, distributions) | nb 01, 03, 04, 06, 07 |
+| [tables/](tables/README.md) | Result tables (metrics, comparisons) as CSV/Markdown | nb 03, 07 |
+| [model_comparison/](model_comparison/README.md) | Side-by-side model/feature-set comparisons | nb 07 |
+| [final_results/](final_results/README.md) | The headline numbers used in the report | After evaluation |
+
+## Conventions
+
+- Export figures at presentation quality (PNG/SVG, readable labels).
+- Keep a clear mapping from each artifact to the `experiment_id` that produced it.
+- Prefer regenerating large artifacts from notebooks over committing them.
