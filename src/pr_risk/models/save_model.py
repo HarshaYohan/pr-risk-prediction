@@ -1,6 +1,8 @@
 """Model persistence helpers."""
 from pathlib import Path
+
 import joblib
+
 
 def save_model(model, path: str | Path) -> None:
     """Save a model with joblib."""

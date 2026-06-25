@@ -1,5 +1,6 @@
 """Simple Streamlit labelling app for PR risk annotation."""
 from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 
@@ -23,12 +24,18 @@ if uploaded_file is not None:
     row = df.iloc[int(row_index)]
     st.subheader("Pull Request Details")
     st.json(row.to_dict())
-    is_risky = st.selectbox("is_risky", options=[0, 1, 2], format_func=lambda x: {0: "0 - non-risky", 1: "1 - risky", 2: "2 - unsure"}[x])
+    is_risky = st.selectbox(
+        "is_risky",
+        options=[0, 1, 2],
+        format_func=lambda x: {0: "0 - non-risky", 1: "1 - risky", 2: "2 - unsure"}[x],
+    )
     risk_type = st.selectbox("risk_type", options=RISK_TYPES)
     notes = st.text_area("Annotation notes")
     if st.button("Save labelled row"):
         labelled_row = row.to_dict()
-        labelled_row.update({"is_risky": is_risky, "risk_type": risk_type, "annotation_notes": notes})
+        labelled_row.update(
+            {"is_risky": is_risky, "risk_type": risk_type, "annotation_notes": notes}
+        )
         output = Path(output_path)
         output.parent.mkdir(parents=True, exist_ok=True)
         new_df = pd.DataFrame([labelled_row])

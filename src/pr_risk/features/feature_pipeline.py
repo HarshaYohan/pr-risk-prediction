@@ -1,6 +1,7 @@
 """Feature combination helpers."""
 from scipy.sparse import csr_matrix, hstack
 
+
 def combine_features(*feature_blocks):
     """Combine pandas, NumPy, or sparse feature blocks into one sparse matrix."""
     matrices = []

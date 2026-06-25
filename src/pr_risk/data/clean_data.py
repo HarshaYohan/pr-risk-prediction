@@ -1,6 +1,7 @@
 """Basic cleaning helpers for PR datasets."""
 import pandas as pd
 
+
 def basic_cleaning(df: pd.DataFrame) -> pd.DataFrame:
     """Return a lightly cleaned copy of a PR dataset."""
     cleaned = df.copy().drop_duplicates()

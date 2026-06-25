@@ -1,6 +1,7 @@
 """Common active learning query strategies."""
 import numpy as np
 
+
 def random_sampling(pool_size: int, batch_size: int, random_state: int = 42) -> np.ndarray:
     """Select random row indices from an unlabelled pool."""
     rng = np.random.default_rng(random_state)
