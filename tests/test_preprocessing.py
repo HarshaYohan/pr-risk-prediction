@@ -1,6 +1,8 @@
 import pandas as pd
+
 from pr_risk.data.clean_data import basic_cleaning
 from pr_risk.features.metadata_features import create_metadata_features
+
 
 def test_basic_cleaning_trims_strings_and_drops_duplicates():
     df = pd.DataFrame({"title": [" Fix bug ", " Fix bug "], "is_risky": [1, 1]})

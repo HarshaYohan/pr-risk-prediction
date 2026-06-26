@@ -12,7 +12,9 @@ def create_metadata_features(df: pd.DataFrame) -> pd.DataFrame:
     for col in DEFAULT_METADATA_COLUMNS:
         if col in df.columns:
             if col == "ci_failed":
-                features[col] = df[col].astype(str).str.lower().isin(["true", "1", "yes"]).astype(int)
+                features[col] = (
+                    df[col].astype(str).str.lower().isin(["true", "1", "yes"]).astype(int)
+                )
             else:
                 features[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
     # TODO: Add PRismBench-specific metadata fields after inspecting the real dataset.

@@ -1,6 +1,7 @@
 """Feature importance explanation helpers."""
 import pandas as pd
 
+
 def explain_with_feature_importance(model, feature_names, top_k: int = 10) -> pd.DataFrame:
     """Return top feature importances for models that expose coefficients or importances."""
     if hasattr(model, "feature_importances_"):

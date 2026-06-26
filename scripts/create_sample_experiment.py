@@ -1,6 +1,7 @@
 """Append a starter experiment row to experiments/experiment_log.csv."""
 from datetime import date
 from pathlib import Path
+
 import pandas as pd
 
 path = Path("experiments/experiment_log.csv")

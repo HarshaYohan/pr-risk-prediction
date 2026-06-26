@@ -1,6 +1,7 @@
 """Metric helpers for classification tasks."""
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, roc_auc_score
 
+
 def classification_metrics(y_true, y_pred, y_proba=None, average: str = "weighted") -> dict:
     """Calculate common classification metrics, including ROC-AUC when possible."""
     metrics = {

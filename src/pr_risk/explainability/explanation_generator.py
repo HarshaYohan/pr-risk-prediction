@@ -2,7 +2,11 @@
 
 def generate_human_readable_explanation(prediction, risk_type: str, top_factors) -> str:
     """Generate a simple explanation and mitigation suggestion."""
-    factors = ", ".join(str(factor) for factor in top_factors) if top_factors else "no dominant factors"
+    factors = (
+        ", ".join(str(factor) for factor in top_factors)
+        if top_factors
+        else "no dominant factors"
+    )
     if prediction in [1, "1", True, "risky"]:
         return (
             f"This PR is predicted as risky with primary risk type '{risk_type}'. "

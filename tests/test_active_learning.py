@@ -1,5 +1,12 @@
 import numpy as np
-from pr_risk.active_learning.query_strategies import entropy_sampling, least_confidence_sampling, margin_sampling, random_sampling
+
+from pr_risk.active_learning.query_strategies import (
+    entropy_sampling,
+    least_confidence_sampling,
+    margin_sampling,
+    random_sampling,
+)
+
 
 def test_random_sampling_returns_requested_batch_size():
     selected = random_sampling(pool_size=20, batch_size=5, random_state=1)
