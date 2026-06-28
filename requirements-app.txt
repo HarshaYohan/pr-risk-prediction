@@ -1,0 +1,6 @@
+# Prototype application dependencies
+-r requirements.txt
+
+streamlit
+fastapi
+uvicorn

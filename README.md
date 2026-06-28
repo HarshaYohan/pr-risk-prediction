@@ -120,7 +120,10 @@ pr-risk-prediction/
 ├─ PROJECT_OVERVIEW.md    ← why this project exists + methodology
 ├─ STRUCTURE.md           ← detailed folder-by-folder reference
 ├─ pyproject.toml         ← tooling (black, ruff, pytest) + metadata
-├─ requirements.txt       ← pip dependencies
+├─ requirements.txt       ← core experiment/runtime pip dependencies
+├─ requirements-dev.txt   ← local notebooks, tests, and code-quality tools
+├─ requirements-app.txt   ← Streamlit/FastAPI prototype dependencies
+├─ requirements-colab.txt ← Colab-safe experiment dependencies
 ├─ environment.yml        ← conda environment
 ├─ .env.example           ← template for secrets (copy to .env, never commit .env)
 ├─ data/                  ← datasets by stage (raw → interim → processed; labelled/unlabelled; sample)
@@ -186,7 +189,7 @@ Windows (PowerShell):
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 pytest
 ```
 
@@ -195,11 +198,31 @@ Linux / macOS:
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+pip install -r requirements-dev.txt
 pytest
 ```
 
 You can also use the helper scripts: [`scripts/setup_env.ps1`](scripts/setup_env.ps1) (Windows) or [`scripts/setup_env.sh`](scripts/setup_env.sh) (Unix).
+
+### Dependency files
+
+Use the smallest dependency file for the environment you are working in:
+
+| File | Use it for |
+|---|---|
+| [`requirements.txt`](requirements.txt) | Core experiment/runtime dependencies |
+| [`requirements-dev.txt`](requirements-dev.txt) | Local development, notebooks, tests, `black`, and `ruff` |
+| [`requirements-app.txt`](requirements-app.txt) | Streamlit and FastAPI prototype apps |
+| [`requirements-colab.txt`](requirements-colab.txt) | Google Colab experiments without reinstalling Colab-managed notebook packages |
+
+In Colab, install with:
+
+```python
+%pip install -r requirements-colab.txt
+```
+
+Avoid installing `jupyter` or `ipykernel` in Colab. Colab manages its own notebook environment, and reinstalling notebook server packages can cause dependency conflicts with `google-colab`.
 
 ### Option B — conda
 
@@ -214,7 +237,7 @@ pytest
 The transformer/XAI extras (`torch`, `transformers`, `sentence-transformers`, `shap`, `lime`) are heavy. For data exploration and baseline modelling you only need the core stack — install just what you need:
 
 ```bash
-pip install pandas numpy scipy scikit-learn matplotlib seaborn pyyaml jupyter ruff pytest
+pip install pandas numpy scipy scikit-learn matplotlib seaborn pyyaml
 ```
 
 Notebooks `05` (deep learning) and `06` (explainability) **guard** their heavy imports, so they still open and run their light sections without these packages.

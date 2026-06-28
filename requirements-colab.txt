@@ -1,3 +1,9 @@
+# Colab-safe experiment dependencies
+#
+# Do not install local notebook/server tooling such as jupyter or ipykernel in
+# Colab. Google Colab manages those packages itself, and reinstalling them can
+# create dependency conflicts with google-colab.
+
 # Core data science
 pandas
 numpy

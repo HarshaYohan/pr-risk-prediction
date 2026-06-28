@@ -7,7 +7,7 @@ Google Colab setup for early GPU experiments (transformers in notebook 05). Use 
 ```mermaid
 flowchart LR
     mount[Mount Google Drive] --> clone[Clone this repo]
-    clone --> install[pip install -r requirements.txt]
+    clone --> install[%pip install -r requirements-colab.txt]
     install --> gpu[Check GPU available]
     gpu --> data[Load data from private Drive folder]
     data --> run[Run notebook]
@@ -15,9 +15,17 @@ flowchart LR
 
 1. **Mount Drive** to access private data and persist model artifacts.
 2. **Clone** the GitHub repo into the Colab runtime.
-3. **Install** dependencies from `requirements.txt`.
+3. **Install** dependencies from `requirements-colab.txt`.
 4. **Check GPU** (`torch.cuda.is_available()`).
 5. **Import** the `pr_risk` package (add `src/` to `sys.path`).
+
+Use this install command in Colab:
+
+```python
+%pip install -r requirements-colab.txt
+```
+
+Do not install the full local development environment in Colab. Packages such as `jupyter` and `ipykernel` are managed by Colab itself and can create conflicts with `google-colab`.
 
 ## Data safety
 

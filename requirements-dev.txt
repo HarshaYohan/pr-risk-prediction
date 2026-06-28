@@ -1,0 +1,8 @@
+# Local development, notebooks, tests, and code quality
+-r requirements.txt
+
+pytest
+black
+ruff
+jupyter
+ipykernel

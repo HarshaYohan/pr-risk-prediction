@@ -25,4 +25,8 @@ flowchart LR
 - Wire `backend/main.py` `/predict` and `/explain` to trained models via `pr_risk.models.predict` and `pr_risk.explainability`.
 - The Streamlit app already writes labelled rows; connect it to `pr_risk.annotation.merge_labels` to fold labels into the pool.
 
-Install the app extras with the main requirements (`streamlit`, `fastapi`, `uvicorn` are in [`requirements.txt`](../requirements.txt)).
+Install the app extras with:
+
+```bash
+pip install -r requirements-app.txt
+```
